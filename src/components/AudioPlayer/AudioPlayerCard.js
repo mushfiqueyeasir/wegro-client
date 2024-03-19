@@ -2,6 +2,7 @@ import React from "react";
 import AudioPlayer from "react-h5-audio-player";
 
 const AudioPlayerCard = ({ data }) => {
+  console.log(process.env.REACT_APP_PUBLIC_SERVER+"/video/"+data.link)
   return (
     <article className="shadow rounded-lg overflow-hidden">
       <div>
@@ -20,7 +21,7 @@ const AudioPlayerCard = ({ data }) => {
         showFilledProgress={false}
         hasDefaultKeyBindings={false}
         showFilledVolume={false}
-        src={data.link}
+        src={"https://wegro-server.vercel.app"+"/video/"+data.link}
         onPlay={(e) => console.log("onPlay")}
       />
     </article>
